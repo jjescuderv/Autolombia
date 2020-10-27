@@ -1,0 +1,19 @@
+a {
+    color: black;
+}
+
+    a:hover {
+        text-decoration: none;
+    }
+
+.padding-20{
+    padding: 20px;
+}
+
+.padding-admin {
+    padding: 100px 0;
+}
+
+.auction-car-info {
+    margin: 1.25rem 0 0 0;
+}
