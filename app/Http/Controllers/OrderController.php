@@ -23,7 +23,7 @@ class OrderController extends Controller
         $user_id = Auth::user()->getId();
         $data["user_id"] = $user_id;
         
-        return view('order')->with("data", $data);
+        return view('/order/order')->with("data", $data);
     }
     
     
@@ -32,35 +32,57 @@ class OrderController extends Controller
         Order::validate($request);
         Order::create(
             $request->only([
-                "total_price","car_id","user_id"
+                "id","total_price","car_id","user_id"
             ])
         );
 
-        $data = [];
-        $data["car_id"] = $request->input('car_id');
+        $id = $request->input('id');
+        $car = Car::findOrFail($id);
+        $car->setAvailability(0);
+        $car->save();
+        
 
-        
-        
-        return view('/home/successbuy')->with("data", $data);
+        $data = [];
+        $data["id"] = $id;
+
+        return view('/order/successbuy')->with("data", $data);
 
     }
 
     public function download($id)
     {
-        $order = Order::where('car_id', $id)->get();
-        echo $order[0]["id"];
-        $order_id = $order[0]["id"];
-        $user_id = $order[0]["user_id"];
-        $car_id = $order[0]["car_id"];
-        $total_price =$order[0]["total_price"];
-        $created_at =$order[0]["created_at"];
+        $order = Order::findOrFail($id);
+        $car = Car::findOrFail($id);
+        $car_brand = $car->getBrand();
+        $car_model = $car->getModel();
+        $car_license_plate = $car->getLicensePlate();
+
+        $car_id = $id;
+        $order_id = $order->getId();
+
+        $user = $order->user;
+        $user_id = $user->getId();
+        $user_email = $user->getEmail();
+        $user_name = $user->getName();
+        
+        $total_price =$order->getTotalPrice();
+        $created_at =$order["created_at"];
+
         
         $pdf = app('dompdf.wrapper');
-        $cadena = "Factura #: ".$order_id."<br>"."Usuario identificado con el id: ".$user_id."<br>"."Carro #: ".$car_id."<br>"."Precio total: ".$total_price." $(USD)<br>"."Fecha de compra: ".$created_at."<br>";
+        $cadena = "<b>"."AUTOLOMBIA S.A.S"."</b>".
+        "<br>"."Factura #: ".$order_id."<br>"."Fecha de facturación: ".$created_at.
+        "<br>"."<b>"."COMPRADOR"."</b>"."<br>".
+        "Usuario de nombre: ".$user_name."<br>".
+        "Identificado con el correo: ".$user_email."<br>"."<b>".
+        "AUTOMÓVIL COMPRADO"."</b>"."<br>"."Carro #: ".$car_id."<br>".
+        "Carro marca: ".$car_brand."<br>"."Carro modelo: ".$car_model."<br>".
+        "Identificado con la placa: ".$car_license_plate."<br>"."<b>".
+        "TOTAL A PAGAR"."</b>"."<br>"."Precio total: ".$total_price."$ (USD)"."<br>";
 
         $pdf->loadHTML($cadena);
         
-        //Car::where('id', $data["car_id"])->delete();
+        
         
         return $pdf->download('Order.pdf');
     }

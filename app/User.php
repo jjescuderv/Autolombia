@@ -44,6 +44,16 @@ class User extends Authenticatable
         return $this->attributes['id'];
     }
 
+    public function getEmail()
+    {
+        return $this->attributes['email'];
+    }
+
+    public function getName()
+    {
+        return $this->attributes['name'];
+    }
+
     public function getRole()
     {
         return $this->attributes['role'];

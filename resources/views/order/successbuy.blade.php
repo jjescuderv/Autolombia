@@ -14,7 +14,7 @@
         </div>
 
        
-        <form class="link_mimic" form method="POST" action="{{ route('order.download', $data['car_id'])}}">
+        <form class="link_mimic" form method="POST" action="{{ route('order.download', $data["id"])}}">
             @csrf
             <input type="submit" class="btn btn-info float-right" value="Download PDF-Bid">
           </form> 

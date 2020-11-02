@@ -62,7 +62,7 @@
                     <br>
                      <form class="link_mimic" form method="POST" action="{{ route('order.save', $data['car']->getId()) }}">
                         @csrf
-                        <input type="hidden" name="car_id" value=" {{$data["car"]->getId()}}">
+                        <input type="hidden" name="id" value=" {{$data["car"]->getId()}}">
                         <input type="hidden" name="user_id" value=" {{$data["user_id"]}}">
                         <input type="hidden" name="total_price" value=" {{$data["car"]->getPrice()}}">
                         <input type="submit" class="btn btn-success float-right" value="Confirm">

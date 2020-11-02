@@ -9,14 +9,14 @@ use Illuminate\Http\Request;
 
 class Order extends Model 
 {
-    // Attributes id, total_price, created_at, updated_at, car_id, user_id
-    protected $fillable = ['total_price', 'car_id',"user_id"];
+    // Attributes id, total_price, created_at, updated_at, user_id
+    protected $fillable = ['id','total_price',"user_id"];
 
     public static function validate(Request $request) 
     {
         $request -> validate([
+            "id" => "required",
             "total_price" => "required",
-            "car_id" => "required",
             "user_id" => "required",
         ]);
     }
@@ -24,6 +24,11 @@ class Order extends Model
     public function getId() 
     {
         return $this->attributes['id'];
+    }
+
+    public function setId($id) 
+    {
+        $this->attributes['id'] = $id;
     }
 
     public function getTotalPrice() 
@@ -34,6 +39,16 @@ class Order extends Model
     public function setTotalPrice($total_price) 
     {
         $this->attributes['total_price'] = $total_price;
+    }
+
+    public function getUserId() 
+    {
+        return $this->attributes['user_id'];
+    }
+
+    public function setUserID($user_id) 
+    {
+        $this->attributes['user_id'] = $user_id;
     }
 
 
