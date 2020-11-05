@@ -16,7 +16,7 @@ class UpdateUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->bigInteger('credit')->nullable();
+            $table->bigInteger('credit')->default(0);
         });
     }
 
