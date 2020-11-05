@@ -29,13 +29,12 @@
                         <div class="col"><b>State: </b></div>
                         <div class="col">
                             @if($data["auction"]->getState())
-                                Active
+                            Active
                             @else
-                                Inactive
+                            Inactive
                             @endif
                         </div>
                     </div>
-
                     <!-- Car information -->
                     <div class="card auction-car-info">
                         <div class="card-header">
@@ -74,6 +73,44 @@
                                 <div class="col"><b>Description: </b></div>
                                 <div class="col"> {{ $data["auction"]->car->getDescription() }} </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Bids -->
+                    <div class="card auction-car-info">
+                        <div class="card-header">
+                            @if(!empty($data["bid"]->toArray()))
+                                Highest bid: {{ $data["bid"]->getBidValue() }}
+                            @else
+                                Be the first bidder!
+                            @endif
+                        </div>
+                        <div class="card-body">
+                            <form method="POST" action="{{ route('auction.bid', $data['auction']->getId()) }}">
+                                @csrf
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <input class="form-control" type="number" placeholder="Enter bid value"
+                                            name="bid_value" value="{{ old('bid_value') }}">
+                                        <input class="form-control" type="hidden" name="auction_id"
+                                            value="{{ $data['auction']->getId() }}">
+                                        @guest
+                                        @else
+                                        <input class="form-control" type="hidden" name="user_id"
+                                            value="{{ $data['user']->getId() }}">
+                                        @endguest
+                                    </div>
+                                    <div class="col-sm-2">
+                                        @guest
+                                        <a class="btn btn-info btn-xs float-right" href="{{ route('login') }}">
+                                            Login
+                                        </a>
+                                        @else
+                                        <input type="submit" class="btn btn-info" value="Bid">
+                                        @endguest
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

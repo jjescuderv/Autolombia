@@ -45,6 +45,7 @@ Route::post('/car/show/question/{id}/answer', 'Admin\AdminQuestionController@ans
 /** Routes para las Auctions, lado del cliente */
 Route::get('/auction', 'AuctionController@showAll')->name("auction.index");
 Route::get('/auction/show/{id}', 'AuctionController@show')->name("auction.show");
+Route::post('/auction/show/{id}/bid', 'BidController@save')->name("auction.bid");
 
 /** Routes para las Ordenes */
 Route::get('/car/order{id}', 'OrderController@show')->name("order");

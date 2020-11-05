@@ -73,11 +73,14 @@
                                         <input class="form-control" type="hidden" name="car_id" value="{{ $data['car']->getId() }}" >
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="submit" class="btn btn-info" value="Post">
+                                        @guest
+                                            <a class="btn btn-info btn-xs float-right" href="{{ route('login') }}" > Login </a>
+                                        @else
+                                            <input type="submit" class="btn btn-info" value="Post">
+                                        @endguest
                                     </div>
                                 </div>
                             </form>
-
                             <ul>
                                 @foreach($data["questions"] as $question)
                                     <li>
