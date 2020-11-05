@@ -2,6 +2,7 @@
 //Jhonatan Acevedo Castrillón
 //Andrew Perez
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Order;
 use App\Car;
@@ -22,50 +23,56 @@ class OrderController extends Controller
         $data = [];
         $car = Car::findOrFail($id);
         $data["car"] = $car;
-        $user_id = Auth::user()->getId();
-        $data["user_id"] = $user_id;
-        
-        return view('/order/order')->with("data", $data);
+        $user = Auth::user();
+        $data["user"] = $user;
+
+        return view('/order/show')->with("data", $data);
     }
-    
-    
-    public function save(Request $request) 
+
+
+    public function save(Request $request)
     {
-        Order::validate($request);
-        Order::create(
-            $request->only([
-                "id","total_price","car_id","user_id"
-            ])
-        );
+        $total_price = $request->input('total_price');
+        $id_user = $request->input('user_id');
+        $user = User::findOrFail($id_user);
+        $credit = $user->getCredit();
 
-        $id = $request->input('id');
-        $car = Car::findOrFail($id);
-        $car->setAvailability(0);
-        $car->save();
-        
+        if ($credit - $total_price <= 0) {
+            return back();
+        } else {
 
-        $data = [];
-        $data["id"] = $id;
+            Order::validate($request);
+            Order::create(
+                $request->only([
+                    "id", "total_price", "car_id", "user_id"
+                ])
+            );
 
-        return view('/order/successbuy')->with("data", $data);
+            $user->setCredit($credit - $total_price);
+            $user->save();
 
+            $id = $request->input('id');
+            $car = Car::findOrFail($id);
+            $car->setAvailability(0);
+            $car->save();
+
+            $data = [];
+            $data["id"] = $id;
+
+            return view('/order/successbuy')->with("data", $data);
+        }
     }
 
-    public function download(Request $request,$id)
-    {   
+    public function download(Request $request, $id)
+    {
         $type = $request->input("boton");
-        $order = app(OrderStorage::class, ['array'=> $type]);
+        $order = app(OrderStorage::class, ['array' => $type]);
         return $order->store($id);
     }
 
 
-    public function cancel($data) 
+    public function cancel($data)
     {
         return redirect('/car');
     }
-
-    
-
-
-
 }

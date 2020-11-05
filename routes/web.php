@@ -52,6 +52,8 @@ Route::get('/car/order/cancel', 'OrderController@cancel')->name("order.cancel");
 Route::post('/car/order/save', 'OrderController@save')->name("order.save");
 Route::post('/car/order/download/{id}', 'OrderController@download')->name("order.download");
 
+/** Routes para el perfil */
+Route::get('/profile/show', 'ProfileController@show')->name("profile.index");
 
 
 Auth::routes();
