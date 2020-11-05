@@ -20,6 +20,10 @@ class Bid extends Model
     {
         return $this->attributes['id'];
     }
+    public function getUserId() 
+    {
+        return $this->attributes['user_id'];
+    }
     public function setId($id) 
     {
         $this->attributes['id'] = $id;

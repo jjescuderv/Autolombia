@@ -80,7 +80,7 @@
                     <div class="card auction-car-info">
                         <div class="card-header">
                             @if(!empty($data["bid"]->toArray()))
-                                Highest bid: {{ $data["bid"]->getBidValue() }}
+                                Highest bid: {{ $data["bid"]->getBidValue() . " User: " . $data["userwin"]->getName() ." Email: ". $data["userwin"]->getEmail() }}
                             @else
                                 Be the first bidder!
                             @endif

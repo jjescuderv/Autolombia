@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Auction;
+use App\User;
 
 //Juan José Escudero
 class AuctionController extends Controller 
@@ -15,9 +16,9 @@ class AuctionController extends Controller
         $auction = Auction::findOrFail($id);
         $data["auction"] = $auction;
 
+        
         $user = Auth::user();
         $data["user"] = $user;
-
         $bids = $auction->bids;
 
         $highestBid = new Auction();
@@ -26,6 +27,9 @@ class AuctionController extends Controller
             if($bid->getBidValue() > $highestBidValue) {
                 $highestBid = $bid;
                 $highestBidValue = $bid->getBidValue();
+                $userid = $bid->getUserId();
+                $user2 = User::findOrFail($userid);
+                $data["userwin"] = $user2;
             }
         }
 
