@@ -8,6 +8,7 @@ use App\Auction;
 use App\Car;
 
 //Juan José Escudero
+//Andrew Perez
 
 class AdminAuctionController extends Controller 
 {
@@ -45,9 +46,8 @@ class AdminAuctionController extends Controller
     public function create() 
     {
         $data = [];
-        $cars = Car::all();
+        $cars = Car::where('availability',1)->get();
         $data["cars"] = $cars;
-
         return view('admin.auction.create')->with("data", $data);
     }
 
