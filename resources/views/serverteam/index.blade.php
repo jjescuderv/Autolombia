@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8 padding-admin">
             <div class="card">
-                <div class="card-header"><b>Server Team</b></div>
+                <div class="card-header"><b>Service Team</b></div>
                 <div class="card-body" id="card-body-all">
 
                     <script type="text/javascript">
