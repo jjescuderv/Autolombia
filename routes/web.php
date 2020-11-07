@@ -55,6 +55,7 @@ Route::post('/car/order/download/{id}', 'OrderController@download')->name("order
 
 /** Routes para el perfil */
 Route::get('/profile/show', 'ProfileController@show')->name("profile.index");
+Route::get('/serverteam', 'ServerTeamController@index')->name("serverteam.index");
 
 
 Auth::routes();
