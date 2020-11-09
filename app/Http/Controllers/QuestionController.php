@@ -26,7 +26,7 @@ class QuestionController extends Controller
     {
         Question::where('id', $id)->delete();
         
-        return redirect()->route('car.index');
+        return back()->with('success', 'Question deleted!');
     }
 
 }
