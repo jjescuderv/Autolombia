@@ -26,6 +26,8 @@ Route::get('/admin/car/edit/{id}', 'Admin\AdminCarController@edit')->name("admin
 Route::post('/admin/car/save', 'Admin\AdminCarController@save')->name("admin.car.save");
 Route::post('/admin/car/update/{id}', 'Admin\AdminCarController@update')->name("admin.car.update");
 Route::delete('/admin/car/delete/{id}', 'Admin\AdminCarController@delete')->name("admin.car.delete");
+Route::get('/admin/sells/', 'Admin\SellController@show')->name("admin.sells.index");
+
 
 /** Routes para administrar la clase Auction */
 Route::get('/admin/auction', 'Admin\AdminAuctionController@showAll')->name("admin.auction.index");
