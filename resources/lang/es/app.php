@@ -58,6 +58,7 @@ return [
     'update' => 'Actualizar',
     'delete' => 'Borrar',
     'post' => 'Publicar',
+    'sold' => 'Vendido',
 
     'questions_title' => 'Preguntas de los usuarios',
     'questions_placeholder' => 'Pregunta algo!',
