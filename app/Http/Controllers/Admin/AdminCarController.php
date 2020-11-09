@@ -60,7 +60,7 @@ class AdminCarController extends Controller
             ])
         );
 
-        $imagePath = $car->getId() . ' ' . $car->getModel() . '.png';
+        $imagePath = $car->getId() . $car->getModel() . '.png';
 
         $storeCarImage = app(ImageStorage::class);
         $storeCarImage->store($request, $imagePath);

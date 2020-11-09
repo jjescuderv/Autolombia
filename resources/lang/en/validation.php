@@ -146,6 +146,22 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'brand' => 'Brand',
+        'model' => 'Model',
+        'color' => 'Color',
+        'price' => 'Price',
+        'mileage' => 'Mileage',
+        'description' => 'Description',
+        'availability' => 'Availability',
+        'license_plate' => 'License plate',
+        'image' => 'Image',
+        'reserve_price' => 'Reserve price',
+        'beginning' => 'Beginning date',
+        'ending' => 'Ending date',
+        'car_id' => 'Car',
+        'question_id' => 'Question',
+        'answer_id' => 'Answer',
+    ],
 
 ];
