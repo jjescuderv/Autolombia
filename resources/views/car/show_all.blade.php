@@ -3,14 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-lg-3">
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h3 class="card-title">Cositas</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-9">
+        <div class="col-lg-12">
             @if(empty($data["cars"]->toArray()))
                 {{ __('app.dbempty') }}
             @endif
@@ -18,7 +11,7 @@
             <a href="{{ route('car.show', $car->getId()) }}">
             <div class="row">
                 <div class="card mt-4">
-                    <div class="card-body" style="display: flex; align-items: center">
+                    <div class="card-body">
                         <div class="col-lg-4" style="float:left">
                             <img src="{{ 'storage/' . $car->getImagePath() }}" 
                             style="height: 100%; width: 100%; object-fit: contain;">
