@@ -16,6 +16,7 @@ RUN php artisan key:generate
 RUN composer dump autoload
 RUN php artisan db:seed
 RUN php artisan migrate
+RUN php artisan storage:link
 RUN chmod -R 777 storage
 RUN a2enmod rewrite
 RUN service apache2 restart
