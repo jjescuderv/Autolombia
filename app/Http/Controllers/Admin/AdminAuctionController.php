@@ -54,6 +54,10 @@ class AdminAuctionController extends Controller
     public function save(Request $request) 
     {
         Auction::validate($request);
+        $car = Car::findOrFail($request->input('car_id'));
+        $car->setAvailability(0);
+        $car->save();
+        
         Auction::create(
             $request->only([
                 "reserve_price", "beginning", "ending", "state", "car_id"

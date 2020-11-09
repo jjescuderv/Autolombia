@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+// Juan José Escudero
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,6 +13,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+        $this->call(UserTableSeeder::class);
+        $this->call(CarTableSeeder::class);
+        $this->call(AuctionTableSeeder::class);
+        $this->call(QuestionTableSeeder::class);
+        $this->call(AnswerTableSeeder::class);
     }
 }
