@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section("title", 'Show all')
 @section('content')
+</header>
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
@@ -13,7 +14,7 @@
                 <div class="card mt-4">
                     <div class="card-body">
                         <div class="col-lg-4" style="float:left">
-                            <img src="{{ 'storage/' . $car->getImagePath() }}" 
+                            <img src="{{ asset('storage/' . $car->getImagePath()) }}" 
                             style="height: 100%; width: 100%; object-fit: contain;">
                         </div>
                         <div class="col-lg-8" style="float:left">

@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Order')
 @section('content')
+</header>
     <div class="container">
         <div class="row justify-content-center">
 
