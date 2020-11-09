@@ -8,7 +8,7 @@
                 <div class="card-header">Auctions</div>
                     <div class="card-body" id="card-body-all">
                         @if(empty($data["auctions"]->toArray()))
-                            The database is empty!
+                            {{ __('app.dbempty') }}
                         @endif
                         @foreach($data["auctions"] as $auction)
                             <a href="{{ route('auction.show', $auction->getId()) }}">

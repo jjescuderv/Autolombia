@@ -5,18 +5,20 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
-//Andrew Pérez
+// Andrew Pérez
+// Juan José Escudero
 
 class Question extends Model
 {
-    //attributes id, question, created_at, updated_at
-    protected $fillable = ['question', 'car_id'];
+    //attributes id, question, car_id, user_id, created_at, updated_at
+    protected $fillable = ['question', 'car_id', 'user_id'];
 
     public static function validate(Request $request)
     {
         $request->validate([
             "question" => "required",
-            "car_id" => "required|numeric|gt:0"
+            "car_id" => "required|numeric|gt:0",
+            "user_id" => "required|numeric|gt:0"
         ]);
     }
 

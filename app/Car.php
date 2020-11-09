@@ -10,8 +10,8 @@ use Illuminate\Http\Request;
 class Car extends Model 
 {
 
-    // Attributes id, brand, color, model, price, mileage, description, availability, license_plate, created_at, updated_at
-    protected $fillable = ['brand', 'model', 'color', 'price', 'mileage', 'description' , 'availability', 'license_plate'];
+    // Attributes id, brand, color, model, price, mileage, description, availability, license_plate, image, created_at, updated_at
+    protected $fillable = ['brand', 'model', 'color', 'price', 'mileage', 'description' , 'availability', 'license_plate', 'image'];
 
     public static function validate(Request $request) 
     {
@@ -24,6 +24,7 @@ class Car extends Model
             "description" => "required",
             "availability" => "required|boolean",
             "license_plate" => "required",
+            "image" => ""
         ]);
     }
 
@@ -115,6 +116,16 @@ class Car extends Model
     public function setLicensePlate($licensePlate) 
     {
         $this->attributes['license_plate'] = $licensePlate;
+    }
+
+    public function getImagePath() 
+    {
+        return $this->attributes['image'];
+    }
+
+    public function setImagePath($carImage) 
+    {
+        $this->attributes['image'] = $carImage;
     }
 
     public function questions() 
