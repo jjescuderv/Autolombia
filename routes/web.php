@@ -40,6 +40,7 @@ Route::delete('/admin/auction/delete/{id}', 'Admin\AdminAuctionController@delete
 Route::get('/car', 'CarController@showAll')->name("car.index");
 Route::get('/car/show/{id}', 'CarController@show')->name("car.show");
 Route::post('/car/show/{id}/question', 'QuestionController@save')->name("car.question");
+Route::delete('/car/delete/{id}/question', 'QuestionController@delete')->name("car.question.delete");
 Route::post('/car/show/question/{id}/answer', 'Admin\AdminQuestionController@answer')->name("car.answer");
 
 /** Routes para las Auctions, lado del cliente */

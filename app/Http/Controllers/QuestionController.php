@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Question;
 
-//Andrew Pérez
+// Andrew Pérez
+// Juan José Escudero
 
 class QuestionController extends Controller
 {
@@ -14,14 +15,13 @@ class QuestionController extends Controller
         Question::validate($request);
         Question::create(
             $request->only([
-                "question", "car_id"
+                "question", "car_id", "user_id"
             ])
         );
 
         return back()->with('success', 'Question posted!');
     }
 
-    // Sin hacer
     public function delete($id)
     {
         Question::where('id', $id)->delete();

@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+</header>
 
 <section class="page-section portfolio" id="portfolio">
     <div class="container">
