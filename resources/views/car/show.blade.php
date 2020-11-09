@@ -80,7 +80,7 @@
                 @foreach($data["questions"] as $question)
                 <div class="col-lg-12">
                     <li>
-                    @if ($question->user->getId() == Auth::user()->id)
+                    @if (Auth::check() and $question->user->getId() == Auth::user()->id)
                         <form method="POST" action="{{ route('car.question.delete', $question->getId()) }}">
                             {{ $question->getQuestion() }}
                             <b> {{ __('app.questions_by') . $question->user->getName() }} </b>
