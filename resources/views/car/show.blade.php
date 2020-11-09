@@ -20,10 +20,17 @@
                         <i class="fas fa-user" style="font-size:20px; margin:auto"></i>
                     </a>
                     @else
-                    <a class="btn btn-success btn-xs" href="{{ route('order', $data['car']->getId()) }}"> 
-                        <h4 class="d-inline"> {{ __('app.buy') }} </h4>
-                        <i class="fas fa-shopping-cart" style="font-size:20px; margin:auto"></i>
-                    </a>
+                        @if( $data['car']->getAvailability() == 1 )
+                            <a class="btn btn-success btn-xs" href="{{ route('order', $data['car']->getId()) }}"> 
+                                <h4 class="d-inline"> {{ __('app.buy') }} </h4>
+                                <i class="fas fa-shopping-cart" style="font-size:20px; margin:auto"></i>
+                            </a>
+                        @else
+                            <a class="btn btn-danger btn-xs" href="{{ route('car.index') }}"> 
+                                <h4 class="d-inline"> {{ __('app.sold') }} </h4>
+                                <i class="fas fa-ban" style="font-size:20px; margin:auto"></i>
+                            </a>
+                        @endif
                     @endguest
                 </div>
                 <hr style="width:95%">
@@ -70,7 +77,11 @@
                                 <i class="fas fa-user" style="font-size:20px; margin:auto"></i>
                             </a>
                             @else
-                            <input type="submit" class="btn btn-info" value="{{ __('app.post') }}">
+                                @if( $data['car']->getAvailability() == 1 )
+                                    <input type="submit" class="btn btn-info" value="{{ __('app.post') }}">
+                                @else
+                                    <a href="{{ route('car.index') }}" class="btn btn-danger"> {{ __('app.sold') }} </a>
+                                @endif
                             @endguest
                         </div>
                     </div>

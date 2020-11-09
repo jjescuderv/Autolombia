@@ -58,6 +58,7 @@ return [
     'update' => 'Update',
     'delete' => 'Delete',
     'post' => 'Post',
+    'sold' => 'Sold',
 
     'questions_title' => 'User\'s questions',
     'questions_placeholder' => 'Ask something!',
