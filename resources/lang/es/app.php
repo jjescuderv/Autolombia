@@ -7,9 +7,9 @@ return [
     'welcome' => 'Encuentra tu vehículo',
     'welcome_cars' => 'Autos usados a la venta',
     'welcome_auctions' => 'Autos usados en subasta',
-    'welcome_msg' => '¡Bienvenido a Autolombia! <br/> 
-                      Ofrecemos una gran variedad de autos a la venta y en subastas. Crea tu cuenta para encontrar el próximo auto de tus sueños. <br/>
-                      ¡Usando Autolombia encuentras los mejores precios en el mercado!',
+    'welcome_msg' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br/> 
+                      Ut quis dapibus mauris. Cras ipsum ex, scelerisque at tempus vel, porta sit amet sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras pretium lacinia placerat. <br/>
+                      In rutrum feugiat sem eget pharetra. Fusce vitae accumsan dui.',
     'location_title' => 'Ubicación',
     'location_city' => 'Medellín, Colombia',
     'location_address' => 'Arboleda del Rodeo, 2622',

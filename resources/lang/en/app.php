@@ -7,9 +7,9 @@ return [
     'welcome' => 'Find your vehicle',
     'welcome_cars' => 'Used cars for sale',
     'welcome_auctions' => 'Used cars at auction',
-    'welcome_msg' => 'Welcome to Autolombia! <br/> 
-                      We offer a wide variety of cars for sale and at auction. Create your account to find the next car of your dreams. <br/>
-                      ¡By using Autolombia you are getting the best prices in the market!',
+    'welcome_msg' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br/> 
+                      Ut quis dapibus mauris. Cras ipsum ex, scelerisque at tempus vel, porta sit amet sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras pretium lacinia placerat. <br/>
+                      In rutrum feugiat sem eget pharetra. Fusce vitae accumsan dui.',
     'location_title' => 'Location',
     'location_city' => 'Medellín, Colombia',
     'location_address' => 'Arboleda del Rodeo, 2622',
