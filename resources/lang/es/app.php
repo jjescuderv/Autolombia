@@ -5,7 +5,11 @@ return [
     /** Información del index */
     'name' => 'Autolombia',
     'welcome' => 'Encuentra tu vehículo',
-    'welcome_msg' => 'Autos usados a la venta',
+    'welcome_cars' => 'Autos usados a la venta',
+    'welcome_auctions' => 'Autos usados en subasta',
+    'welcome_msg' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br/> 
+                      Ut quis dapibus mauris. Cras ipsum ex, scelerisque at tempus vel, porta sit amet sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras pretium lacinia placerat. <br/>
+                      In rutrum feugiat sem eget pharetra. Fusce vitae accumsan dui.',
     'location_title' => 'Ubicación',
     'location_city' => 'Medellín, Colombia',
     'location_address' => 'Arboleda del Rodeo, 2622',
@@ -24,4 +28,41 @@ return [
     'admin' => 'Admin',
     'others_service' => 'Servicio',
 
+    /** Información de la base de datos */
+    'dbempty' => 'The database is empty!',
+
+    /** Información de los formularios */
+    'brand' => 'Marca',
+    'model' => 'Modelo',
+    'color' => 'Color',
+    'price' => 'Precio',
+    'mileage' => 'Recorrido',
+    'description' => 'Descripción',
+    'availability' => 'Disponibilidad',
+    'license_plate' => 'Placa',
+    'image' => 'Imagen',
+    'reserve_price' => 'Precio de reserva',
+    'beginning' => 'Fecha de inicio',
+    'ending' => 'Fecha final',
+    'car_id' => 'Auto',
+    'question_id' => 'Pregunta',
+    'answer_id' => 'Respuesta',
+
+    /** Información del display de autos */
+    'currency' => 'Selecciona tu divisa',
+    'miles' => 'Millas',
+
+    /** Información general */
+    'buy' => 'Comprar',
+    'edit' => 'Editar',
+    'update' => 'Actualizar',
+    'delete' => 'Borrar',
+    'post' => 'Publicar',
+
+    'questions_title' => 'Preguntas de los usuarios',
+    'questions_placeholder' => 'Pregunta algo!',
+    'questions_by' => ' por ',
+    'questions_delete' => 'Borrar pregunta',
+    'answers_title' => 'Respuestas',
+    
 ];
