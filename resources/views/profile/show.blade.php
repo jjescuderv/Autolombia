@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+</header>
     <html>
 
     <head>
