@@ -2,6 +2,49 @@
 @section("title", 'Show')
 @section('content')
 </header>
+<div class="banner__container" style="background-color:orange; margin: 0 0 25px 0; text-align: center">
+    <form method="POST" action="{{ route('car.currency', $data['car']->getId()) }}">
+        @csrf
+        <h6 style="color:white" style="float:left">{{ __('app.currency') }}</h6>
+        <select name="currency">
+            <option selected value='USD'>USD</option>
+            <option value='AUD'>AUD</option>
+            <option value='COP'>COP</option>
+            <option value='BRL'>BRL</option>
+            <option value='CAD'>CAD</option>
+            <option value='CHF'>CHF</option>
+            <option value='CNY'>CNY</option>
+            <option value='CZK'>CZK</option>
+            <option value='DKK'>DKK</option>
+            <option value='EUR'>EUR</option>
+            <option value='GBP'>GBP</option>
+            <option value='HKD'>HKD</option>
+            <option value='HRK'>HRK</option>
+            <option value='HUF'>HUF</option>
+            <option value='IDR'>IDR</option>
+            <option value='ILS'>ILS</option>
+            <option value='INR'>INR</option>
+            <option value='ISK'>ISK</option>
+            <option value='JPY'>JPY</option>
+            <option value='KRW'>KRW</option>
+            <option value='MXN'>MXN</option>
+            <option value='MYR'>MYR</option>
+            <option value='NOK'>NOK</option>
+            <option value='NZD'>NZD</option>
+            <option value='PHP'>PHP</option>
+            <option value='PLN'>PLN</option>
+            <option value='RON'>RON</option>
+            <option value='RUB'>RUB</option>
+            <option value='SEK'>SEK</option>
+            <option value='SGD'>SGD</option>
+            <option value='THB'>THB</option>
+            <option value='TRY'>TRY</option>
+            <option value='ZAR'>ZAR</option>
+        </select>
+        <input class="form-control" type="hidden" name="car_id" value="{{ $data['car']->getId() }}" >
+        <input type="submit" class="btn btn-info" value="Actualizar">
+    </form>
+</div>
 <div class="container">
     <div class="card">
         <div class="card-body">
@@ -12,8 +55,8 @@
                     <h4> {{  $data['car']->getMileage() . ' ' . __('app.miles') }} </h4>
                 </div>
                 <div class="col-lg-5">
-                    <i class="fas fa-dollar-sign" style="font-size:25px; float:left; margin: 0 10px 0 0"></i> 
-                    <h4 class="card-title"> {{ 'USD' . ' ' . $data['car']->getPrice() }} </h4>
+                    <i class="fas fa-coins" style="font-size:25px; float:left; margin: 0 10px 0 0"></i> 
+                    <h4 class="card-title"> {{ $data['currency'] . ' ' . $data['price'] }} </h4>
                     @guest
                     <a class="btn btn-info btn-xs" href="{{ route('login') }}" > 
                         <h4 class="d-inline"> {{ __('app.login') }} </h4>
