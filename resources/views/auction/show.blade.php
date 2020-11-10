@@ -42,6 +42,12 @@
                             Car information
                         </div>
                         <div class="card-body">
+                        <br>
+                            <div class="col-lg-4" style="float:center">
+                                <img src="{{ asset('storage/' . $data["auction"]->car->getImagePath()) }}" 
+                                style="height: 100%; width: 200%; object-fit: contain;">
+                            </div>
+                        </br>
                             <div class="row">
                                 <div class="col"><b>Id: </b></div>
                                 <div class="col"> {{ $data["auction"]->car->getId() }} </div>

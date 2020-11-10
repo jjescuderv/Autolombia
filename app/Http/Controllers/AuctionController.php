@@ -42,7 +42,6 @@ class AuctionController extends Controller
     {
         $data = [];
         $data["auctions"] = Auction::with("car")->get();
-        
         return view('auction.show_all')->with("data", $data);
     }
     
