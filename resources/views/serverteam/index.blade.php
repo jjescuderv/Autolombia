@@ -8,12 +8,12 @@
             <div class="card">
                 <div class="card-header"><b>Service Team</b></div>
                 <div class="card-body" id="card-body-all">
-
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
                     <script type="text/javascript">
                         $.ajax({
                             type: "GET",
                             dataType: "json",
-                            url: 'http://127.0.0.1:8000/api/v2/products',
+                            url: 'http://54.226.240.114/public/api/v2/products',
                             success: function(data) {
                                 $.each(data.data, function(i, f) {
                                     var tblRow = "<tr>" + "<td>" + f.id + "</td>" +
