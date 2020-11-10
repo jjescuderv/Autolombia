@@ -30,20 +30,37 @@ class ProfileController extends Controller
         
 
         $orders = Order::where('user_id', $id)->get();
-        $compras = sizeof($orders);
+        
 
-        return $compras;
+        return $orders;
     }
 
     public function show()
     {
         $data = [];
+        $orders = self::comprasUsuario();
+        $cars = [];
+
+        $index = 0;
+        foreach ($orders as &$order) {
+            $order_id=$order->getId();
+            
+            $car = Car::findOrFail($order_id);
+            
+            array_push($cars, $car);
+        }
+        
+        
+        
+        
+
         
         $data["name"] = Auth::user()->getName();
         $data["id"] = Auth::user()->getId();
         $data["email"] = Auth::user()->getEmail();
-        $data["compras"] = self::comprasUsuario();
+        $data["compras"] = sizeof(self::comprasUsuario());
         $data["saldo"] = Auth::user()->getCredit();
+        $data["cars"] = $cars;
         return view('/profile/show')->with("data", $data);
     }
 

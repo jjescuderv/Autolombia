@@ -1,5 +1,5 @@
 <?php
-
+//Jhonatan Acevedo
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/cars', 'Api\CarApi@index')->name("api.car.index");
+Route::get('/cars/{id}', 'Api\CarApi@show')->name("api.car.show");
+

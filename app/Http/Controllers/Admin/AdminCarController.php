@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
+use App\Interfaces\ImageStorage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Car;
@@ -53,13 +54,21 @@ class AdminCarController extends Controller
     public function save(Request $request) 
     {
         Car::validate($request);
-        Car::create(
+        $car = Car::create(
             $request->only([
                 "brand", "model", "color", "price", "mileage", "description", "availability", "license_plate"
             ])
         );
 
-        return back()->with('success', 'Car created succesfully!');
+        $imagePath = $car->getId() . $car->getModel() . '.png';
+
+        $storeCarImage = app(ImageStorage::class);
+        $storeCarImage->store($request, $imagePath);
+
+        $car->setImagePath($imagePath);
+        $car->save();
+        
+        return back()->with('success', 'Car created successfully!');
     }
 
     public function edit($id)

@@ -39,6 +39,17 @@ class User extends Authenticatable
     ];
 
 
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            
+        ]);
+    }
+
+
     public function getId()
     {
         return $this->attributes['id'];
@@ -85,13 +96,5 @@ class User extends Authenticatable
         return $this->hasMany(Question::class);
     }
 
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-    }
 
 }

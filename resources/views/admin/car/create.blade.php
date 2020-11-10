@@ -16,7 +16,7 @@
                         </ul>
                         @endif
 
-                        <form method="POST" action="{{ route('admin.car.save') }}">
+                        <form id="create_car" method="POST" action="{{ route('admin.car.save') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label"> Brand </label>
@@ -76,8 +76,15 @@
                                      name="license_plate" value="{{ old('license_plate') }}" >
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label"> Image </label>
+                                <div class="col-sm-10">
+                                    <input type="file" id="selectedFile" style="display: none;" name="image">
+                                    <input type="button" value="Search" onclick="document.getElementById('selectedFile').click();">
+                                </div>
+                            </div>
                             <div class="text-center">
-                                <input type="submit" class="btn btn-success" value="Create">
+                                <input type="submit" class="btn btn-success" value="Create" form="create_car">
                             </div>
                         </form>
                     </div>  

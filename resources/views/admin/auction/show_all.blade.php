@@ -6,6 +6,8 @@
         <div class="col-md-8 padding-admin">
             <div class="card">
                 <div class="card-header">Auctions</div>
+                
+                <a href="{{ route('admin.auction.create') }}" class="btn btn-info"> New auction </a>
                     <div class="card-body" id="card-body-all">
                         @if(empty($data["auctions"]->toArray()))
                             The database is empty!

@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -175,6 +175,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\OrderProvider::class,
+        App\Providers\ImageServiceProvider::class,
+        App\Providers\FakerServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
