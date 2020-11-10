@@ -2,10 +2,10 @@
 @section("title", 'Show')
 @section('content')
 </header>
-<div class="banner__container" style="background-color:orange; margin: 0 0 25px 0; text-align: center">
+<div class="banner__container" style="background-color:#f1dd29; margin: 0 0 25px 0; padding: 10px 0; text-align: center">
     <form method="POST" action="{{ route('car.currency', $data['car']->getId()) }}">
         @csrf
-        <h6 style="color:white" style="float:left">{{ __('app.currency') }}</h6>
+        <h4 style="color:white" style="float:left">{{ __('app.currency') }}</h4>
         <select name="currency">
             <option selected value='USD'>USD</option>
             <option value='AUD'>AUD</option>

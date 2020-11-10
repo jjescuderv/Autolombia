@@ -7,13 +7,16 @@ return [
     'welcome' => 'Encuentra tu vehículo',
     'welcome_cars' => 'Autos usados a la venta',
     'welcome_auctions' => 'Autos usados en subasta',
+
+    'welcome_auctions_sub' => 'Desde USD ',
     'welcome_msg' => 'Bienvenid@, en este sitio podrás encontrar anuncios y subastas de autos usados',
+
     'location_title' => 'Ubicación',
     'location_city' => 'Medellín, Colombia',
     'location_address' => 'Arboleda del Rodeo, 2622',
     'social_media' => 'En las redes',
     'about_title' => 'Sobre nosotros',
-    'about_content' => 'Autolombia es una chimba!',
+    'about_content' => 'Autolombia es genial!',
     'copyright' => 'Copyright © Autolombia 2020',
 
     /** Información del admin panel */
@@ -32,13 +35,16 @@ return [
     'others_service' => 'Servicio',
     'cars' => 'Autos',
     'home' => 'Inicio',
+    'sells' => 'Ventas',
     'new_auction' => 'Nueva subasta',
     'new_car' => 'Nuevo auto',
 
     /** Información de la base de datos */
-    'dbempty' => 'The database is empty!',
+    'dbempty' => 'La base de datos está vacía!',
 
-    /** Información de los formularios */
+    /** Información del formulario de autos */
+    'car_create_title' => 'Crear nuevo auto',
+    'car_edit_title' => 'Actualizar el auto con id',
     'brand' => 'Marca',
     'model' => 'Modelo',
     'color' => 'Color',
@@ -46,31 +52,55 @@ return [
     'mileage' => 'Recorrido',
     'description' => 'Descripción',
     'availability' => 'Disponibilidad',
+        'available' => 'Disponible',
+        'not_available' => 'No disponible',
     'license_plate' => 'Placa',
     'image' => 'Imagen',
+    'phbrand' => 'Ingrese la marca',
+    'phmodel' => 'Ingrese el modelo',
+    'phcolor' => 'Ingrese el color',
+    'phprice' => 'Ingrese el precio',
+    'phmileage' => 'Ingrese el recorrido',
+    'phdescription' => 'Ingrese la descripción',
+    'phlicense_plate' => 'Ingrese la placa',
+
+    /** Información del formulario de subastas */
+    'auction_create_title' => 'Crear nueva subasta',
+    'auction_edit_title' => 'Actualizar la subasta con id',
     'reserve_price' => 'Precio de reserva',
     'beginning' => 'Fecha de inicio',
     'ending' => 'Fecha final',
-    'car_id' => 'Auto',
-    'question_id' => 'Pregunta',
-    'answer_id' => 'Respuesta',
+    'state' => 'Estado',
+        'active' => 'Activa',
+        'inactive' => 'Inactiva',
+    'car' => 'Auto',
+    'phreserve_price' => 'Ingrese el precio de reserva',
 
+    'show_all_cars' => 'Listado de autos',
+    'show_car' => 'Auto con id',
+
+    'question' => 'Ingresa una pregunta',
+    'answer' => 'Ingresa una respuesta',
+    'questions_title' => 'Preguntas de los usuarios',
+    'questions_placeholder' => 'Pregunta algo!',
+    'questions_by' => ' por ',
+    'questions_delete' => 'Borrar pregunta',
+    'answers_title' => 'Respuestas',
+    
     /** Información del display de autos */
     'currency' => 'Selecciona tu divisa',
-    'miles' => 'Millas',
+    'miles' => 'millas',
 
-    /** Información general */
+    /** Información de botones */
     'buy' => 'Comprar',
     'edit' => 'Editar',
     'update' => 'Actualizar',
     'delete' => 'Borrar',
     'post' => 'Publicar',
     'sold' => 'Vendido',
-
-    'questions_title' => 'Preguntas de los usuarios',
-    'questions_placeholder' => 'Pregunta algo!',
-    'questions_by' => ' por ',
-    'questions_delete' => 'Borrar pregunta',
-    'answers_title' => 'Respuestas',
+    'search' => 'Buscar',
+    'create' => 'Crear',
+    'save' => 'Guardar',
+    'cancel' => 'Cancelar',
     
 ];

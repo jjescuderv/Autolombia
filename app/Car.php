@@ -24,7 +24,7 @@ class Car extends Model
             "description" => "required",
             "availability" => "required|boolean",
             "license_plate" => "required",
-            "image" => ""
+            "image" => "required"
         ]);
     }
 
