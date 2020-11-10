@@ -56,14 +56,14 @@ class AdminCarController extends Controller
         Car::validate($request);
         $car = Car::create(
             $request->only([
-                "brand", "model", "color", "price", "mileage", "description", "availability", "license_plate"
+                "brand", "model", "color", "price", "mileage", "description", "availability", "license_plate", "image"
             ])
         );
 
         $imagePath = $car->getId() . $car->getModel() . '.png';
 
-        $storeCarImage = app(ImageStorage::class);
-        $storeCarImage->store($request, $imagePath);
+        $image = app(ImageStorage::class);
+        $image->store($request, $imagePath);
 
         $car->setImagePath($imagePath);
         $car->save();
@@ -83,16 +83,41 @@ class AdminCarController extends Controller
 
     public function update(Request $request, $id)
     {
+        $car = Car::findOrFail($id);
+        $imagePath = $car->getImagePath();
+
+        if($request->hasFile('image')) {
+            $image = app(ImageStorage::class);
+            $image->delete($imagePath);
+            $image->store($request, $imagePath);
+        }
+
+        $request->merge([
+            'image' => $imagePath,
+        ]);
+
         Car::validate($request);
-        Car::find($id)->update($request->all());
+        Car::find($id)->update(
+            $request->only([
+                "brand", "model", "color", "price", "mileage", "description", "availability", "license_plate"
+            ])
+        );
 
         return back()->with('success', 'Car updated succesfully!');
     }
 
     public function delete($id) 
     {
-        Car::where('id', $id)->delete();
-        
+        $car = Car::findOrFail($id);
+        $imagePath = $car->getImagePath();
+        $image = app(ImageStorage::class);
+
+        if($image->exists($imagePath)) {
+            $image->delete($imagePath);
+        }
+
+        $car->delete();
+
         return redirect()->route('admin.car.index');
     }
     

@@ -31,7 +31,7 @@
                         @else
 
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('home.index') }}"> {{ __('app.home') }} </a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('admin.sells.index') }}">Sells</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('admin.sells.index') }}">{{__('app.sells')}}</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('admin.auction.index') }}"> {{ __('app.auctions') }} </a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('admin.car.index') }}"> {{ __('app.cars') }} </a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -45,6 +45,8 @@
                 </div>
             </div>
         </nav>
+        <header class="banner__container align-text-bottom"  style="padding-top: calc(3rem); padding-bottom: 4rem; background-color:#f1dd29; position:relative;">
+        </header>
         @yield('content')
     </body>
 </html>

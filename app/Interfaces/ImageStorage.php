@@ -8,4 +8,6 @@ use Illuminate\Http\Request;
 interface ImageStorage 
 {
     public function store(Request $request, $filepath);
+    public function delete($filepath);
+    public function exists($filepath);
 }

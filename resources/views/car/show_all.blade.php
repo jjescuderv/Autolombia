@@ -21,7 +21,7 @@
                             <h3 class="card-title"> {{ $car->getBrand() . ' ' .  $car->getModel() }} </h3>
                             <h4> {{ '$' . $car->getPrice() }} </h4>
                             <p class="card-text"> {{ __($car->getDescription()) }} </p>
-                            <i class="fas fa-tachometer-alt" style="font-size:25px; float:left; margin: 0 10px 0 0"></i> {{ $car->getMileage() . ' miles'}}
+                            <i class="fas fa-tachometer-alt" style="font-size:25px; float:left; margin: 0 10px 0 0"></i> {{ $car->getMileage() . ' ' . __('app.miles')}}
                         </div>
                     </div>
                 </div>

@@ -25,7 +25,7 @@ class CreateCarsTable extends Migration
             $table->text('description');
             $table->boolean('availability');
             $table->text('license_plate');
-            $table->text('image')->nullable();
+            $table->text('image');
             $table->timestamps();
         });
     }
