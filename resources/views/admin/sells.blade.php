@@ -12,29 +12,27 @@
                             The database is empty!
                         @endif
                         @foreach ($data['cars'] as $car)
-                            <a href="{{ route('admin.car.show', $car->getId()) }}">
-                                <div class="row" id="row-all">
-                                    <div class="col-2">
-                                        {{ $car->getId() }}
-                                    </div>
+                            @foreach ($data['orders'] as $order)
+                                @if ($order->getId() == $car->getId())
+                                    <a href="{{ route('admin.car.show', $car->getId()) }}">
+                                        <div class="row" id="row-all">
+                                            <div class="col-2">
+                                                {{ $car->getId() }}
+                                            </div>
 
-                                    <div class="col-7">
-                                        {{ $car->getBrand() }} {{ $car->getModel() }} <br />
-                                        {{ $car->getColor() }} <br />
-                                        Price: {{ $car->getPrice() }}
-                                    </div>
+                                            <div class="col-7">
+                                                {{ $car->getBrand() }} {{ $car->getModel() }} <br />
+                                                {{ $car->getColor() }} <br />
+                                                Price: {{ $car->getPrice() }}
+                                            </div>
 
-
-                                    @foreach ($data['orders'] as $order)
-                                        @if ($order->getId() == $car->getId())
                                             <div class="col-3">
                                                 Customer Id: {{ $order->getUserId() }}
                                             </div>
-                                        @endif
-                                    @endforeach
-
-                                </div>
-                            </a>
+                                        </div>
+                                    </a>
+                                @endif
+                            @endforeach
                         @endforeach
                     </div>
                 </div>

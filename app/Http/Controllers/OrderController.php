@@ -71,7 +71,7 @@ class OrderController extends Controller
     }
 
 
-    public function cancel($data)
+    public function cancel()
     {
         return redirect('/car');
     }

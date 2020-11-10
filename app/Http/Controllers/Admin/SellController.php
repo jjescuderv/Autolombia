@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
-use App\Interfaces\ImageStorage;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
 use App\Car;
 use App\Order;
 
@@ -31,7 +29,6 @@ class SellController extends Controller
         $data["cars"] = Car::where('availability', 0)->get();
         $orders = Order::all();
         $data["orders"] = $orders;
-        
         
         return view('admin.sells')->with("data", $data);
     }

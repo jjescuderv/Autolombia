@@ -60,5 +60,8 @@ Route::post('/car/order/download/{id}', 'OrderController@download')->name("order
 Route::get('/profile/show', 'ProfileController@show')->name("profile.index");
 Route::get('/serverteam', 'ServerTeamController@index')->name("serverteam.index");
 
+/** Routes para el servicio de terceros */
+Route::post('/car/show/{id}/currency/other','CarController@updateCurrency')->name("car.currency");
+
 
 Auth::routes();
