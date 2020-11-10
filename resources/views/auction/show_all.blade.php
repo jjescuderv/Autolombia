@@ -36,7 +36,7 @@
                                     $auction->car->getMileage() . ' miles'}} 
                                 </div>
 
-                                <div class="col-lg-8" style="float:left">
+                                <div class="col-lg-8" style="float:right">
 
                                     @if($auction->getState())
                                     <p class="card-text" style="float:left">{{('Active')}} </p>
