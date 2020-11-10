@@ -7,10 +7,10 @@ return [
     'welcome' => 'Encuentra tu vehículo',
     'welcome_cars' => 'Autos usados a la venta',
     'welcome_auctions' => 'Autos usados en subasta',
+
     'welcome_auctions_sub' => 'Desde USD ',
-    'welcome_msg' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br/> 
-                      Ut quis dapibus mauris. Cras ipsum ex, scelerisque at tempus vel, porta sit amet sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras pretium lacinia placerat aptent taciti. <br/>
-                      In rutrum feugiat sem eget pharetra. Fusce vitae accumsan dui. Donec a metus vel purus volutpat dictum vitae at odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos',
+    'welcome_msg' => 'Bienvenid@, en este sitio podrás encontrar anuncios y subastas de autos usados',
+
     'location_title' => 'Ubicación',
     'location_city' => 'Medellín, Colombia',
     'location_address' => 'Arboleda del Rodeo, 2622',
