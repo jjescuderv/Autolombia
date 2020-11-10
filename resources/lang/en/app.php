@@ -18,7 +18,12 @@ return [
     'about_content' => 'Autolombia is great!',
     'copyright' => 'Copyright © Autolombia 2020',
 
+    /** Información del admin panel */
+    'admin' => 'Admin',
+    'admin_welcome' => 'Welcome to the admin page.',
+
     /** Información del menú */
+    'admin_panel' => 'Admin Panel',
     'register' => 'Register',
     'login' => 'Login',
     'store' => 'Store',
@@ -27,6 +32,10 @@ return [
     'logout' => 'Logout',
     'admin' => 'Admin',
     'others_service' => 'Service team',
+    'cars' => 'Cars',
+    'home' => 'Home',
+    'new_auction' => 'New auction',
+    'new_car' => 'New car',
 
     /** Información de la base de datos */
     'dbempty' => 'The database is empty!',
