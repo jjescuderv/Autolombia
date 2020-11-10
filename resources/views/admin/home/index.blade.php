@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8 padding-admin">
             <div class="card">
-                <div class="card-header">Admin</div>
+                <div class="card-header"> {{ __('app.admin') }} </div>
 
                 <div class="card-body">
-                   Welcome to the admin page
+                    {{ __('app.admin_welcome') }} 
                 </div>
             </div>
         </div>

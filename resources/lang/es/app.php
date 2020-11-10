@@ -18,7 +18,12 @@ return [
     'about_content' => 'Autolombia es una chimba!',
     'copyright' => 'Copyright © Autolombia 2020',
 
+    /** Información del admin panel */
+    'admin' => 'Administrador',
+    'admin_welcome' => 'Bienvenido al panel de administración.',
+
     /** Información del menú */
+    'admin_panel' => 'Panel de admin',
     'register' => 'Registrarse',
     'login' => 'Ingresar',
     'store' => 'Tienda',
@@ -27,6 +32,10 @@ return [
     'logout' => 'Salir',
     'admin' => 'Admin',
     'others_service' => 'Servicio',
+    'cars' => 'Autos',
+    'home' => 'Inicio',
+    'new_auction' => 'Nueva subasta',
+    'new_car' => 'Nuevo auto',
 
     /** Información de la base de datos */
     'dbempty' => 'The database is empty!',
