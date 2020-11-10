@@ -41,10 +41,26 @@
                             <div class="col-lg-4"><b>Your credit: </b></div>
                              @if($data['user']->getCredit()-$data['car']->getPrice() >= 0)
                                 <div class="col color:green"><p style="color:green"<b> {{ $data['user']->getCredit() }} $</p></div>
+                                <div class="row">
+                                    
+                                </div>
                              @else
                                 <div class="col color:red"><p style="color:red"<b>Insuficiente ({{ $data['user']->getCredit() }} $)</p></div>
                              @endif
+                             
                         </div>
+                        <div class="row">
+                            
+                            @if($data['user']->getCredit()-$data['car']->getPrice() >= 0)
+                                <div class="col-lg-4"><b>Balance: </b></div>
+                                <div class="col color:green"><p style="color:green"<b> {{$data['user']->getCredit()-$data['car']->getPrice() }} $</p></div>
+
+                            @else
+
+                            @endif
+                            
+                        </div>
+                        
                     </p>
                     
                     <form class="link_mimic" form method="POST" action="{{ route('order.save', $data['car']->getId()) }}">

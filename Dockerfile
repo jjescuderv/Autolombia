@@ -13,9 +13,9 @@ RUN composer install \
     --prefer-dist
 
 RUN php artisan key:generate
-RUN composer dump autoload
-RUN php artisan db:seed
 RUN php artisan migrate
+RUN composer dump-autoload
+RUN php artisan db:seed
 RUN php artisan storage:link
 RUN chmod -R 777 storage
 RUN a2enmod rewrite
