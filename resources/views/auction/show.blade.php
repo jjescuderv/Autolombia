@@ -9,7 +9,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col">
-                            Auction id: {{ $data["auction"]->getId() }}
+                        <h4 class="card-title">Auction id: {{ $data["auction"]->getId() }} </h4>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                     <!-- Car information -->
                     <div class="card auction-car-info">
                         <div class="card-header">
-                            Car information
+                        <h6 class="card-title">Car information </h6>
                         </div>
                         <div class="card-body">
                         <br>
